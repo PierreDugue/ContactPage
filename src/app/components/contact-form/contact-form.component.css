@@ -1,3 +1,23 @@
 ul {
     list-style-type: none;
 }
+
+.container {
+    background-color: beige;
+    border-radius: 5px;
+    width: 70%;
+    margin: 0 auto;
+    padding: 1em;
+}
+
+.succesRes {
+    color: green;
+}
+
+.error {
+    color: red;
+}
+
+.margin {
+    margin: 1em;
+}
