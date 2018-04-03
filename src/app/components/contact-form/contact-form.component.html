@@ -1,0 +1,36 @@
+<form class="blockValue" (ngSubmit)="onSubmit()" [formGroup]="datasForm">
+  <div class="form-group">
+    <div>First name</div>
+    <input class="formInput" class="form-control" formControlName="firstName" required/>
+    <ul>
+      <li class="errorValidation" *ngIf="datasForm.get('firstName').hasError('required') && datasForm.get('firstName').dirty">First name is required</li>
+    </ul>
+  </div>
+  <div class="form-group">
+    <div>Last name</div>
+    <input class="formInput" placeholder="Last name" class="form-control" formControlName="lastName" required/>
+    <ul>
+      <li class="errorValidation" *ngIf="datasForm.get('lastName').hasError('required') && datasForm.get('lastName').dirty">Last name is required</li>
+    </ul>
+  </div>
+  <div class="form-group">
+    <div>E-mail</div>
+    <input class="formInput" class="form-control" formControlName="email" required/>
+    <ul>
+      <li class="errorValidation" *ngIf="datasForm.get('email').hasError('required') && datasForm.get('email').dirty">Email is required</li>
+      <li class="errorValidation" *ngIf="datasForm.get('email').hasError('email') && datasForm.get('email').dirty">Must be a valid email</li>
+    </ul>
+  </div>
+  <div class="form-group">
+    <div>Phone number</div>
+    <input class="formInput" class="form-control" formControlName="phoneNumber" />
+  </div>
+  <div class="form-group">
+    <div>Message</div>
+    <textarea class="formInput" class="form-control" formControlName="message" required></textarea>
+    <ul>
+      <li class="errorValidation" *ngIf="datasForm.get('message').hasError('required') && datasForm.get('message').dirty">The message is required</li>
+    </ul>
+  </div>
+  <button mat-button type="submit" [disabled]="!datasForm.valid">Send</button>
+</form>
