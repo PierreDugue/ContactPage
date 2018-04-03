@@ -15,7 +15,7 @@ export class ContactService {
   constructor(private http: Http) {
   }
 
-  sendContactDatas(event): Observable<Response> {
+  sendContactDatas(event): Observable<any> {
     return this.http.post(URL + '/api/contact/', event)
       .catch((error: any) => Observable.throw(error.json().error || 'Server error'));
   }
